@@ -1,0 +1,21 @@
+SCRIPTS
+
+module.exports = {
+    name: '',
+    desc: '',
+    execute(<REQUIERED PARAMETERS>) {
+        
+    }
+}
+
+REQUIRED PERMS SCRIPT
+
+if (message.member.permissions.has('<PERM>')){
+
+    }
+
+ADD COMMAND
+
+else if (command === '<COMMAND>') {
+    client.commands.get('<FILE NAME>').execute(<PARAMETERS>)
+}
