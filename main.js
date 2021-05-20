@@ -1,5 +1,5 @@
 //docs https://discord.js.org/#/docs/main/stable/general/welcome
-
+//variables
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
@@ -8,10 +8,12 @@ const prefix = settings.prefix
 
 const fs = require('fs')
 
-client.commands = new Discord.Collection()
-
 const commandFolders = fs.readdirSync('./commands');
 
+client.commands = new Discord.Collection()
+
+
+//finds files in folders
 for (const folder of commandFolders) {
 	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {
@@ -27,6 +29,7 @@ client.once('ready', () => {
     client.user.setActivity('russell said to set the status to "pls give me nitro"', { type: 'PLAYING' })
 })
  
+//handles commands
 client.on('message', message =>{
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).trim().split(/ +/);
