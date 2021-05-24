@@ -17,6 +17,7 @@ module.exports = {
         if(!args[0]) return message.channel.send('bruh?? who to kick??')
         if(!mentionedMember) return message.channel.send('not in server 😔😔😔')
         if(!mentionedMember.kickable) return message.channel.send('cant kick?? what?')
+        if(mentionedMember == message.author.username) return message.channel.send('cant kick yourself idiot')
 
         //execute
         const kickEmbed = new Discord.MessageEmbed()
