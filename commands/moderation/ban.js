@@ -15,7 +15,7 @@ module.exports = {
         //input
         if(!reason) reason = 'idk'
         if(!args[0]) return message.channel.send('bruh?? who to ban??')
-        if(!mentionedMember) return message.channel.send('how did you manage to mention someone thats NOT IN THE SERVER')
+        if(!mentionedMember) return message.channel.send('who')
         if(!mentionedMember.bannable) return message.channel.send('cant ban?? what?')
 
         //execute
