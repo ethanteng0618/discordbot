@@ -3,6 +3,6 @@ module.exports = {
     desc: 'sends the date',
     execute(message, args){
         const date = new Date()
-        message.channel.send("time: **" + date.getHours() + ":" + date.getMinutes() + "** on **" + date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear() + "**")
+        message.channel.send("**" + date.getHours() + ":" + date.getMinutes() + "\n" + date.toDateString() + "**")
     }
 }

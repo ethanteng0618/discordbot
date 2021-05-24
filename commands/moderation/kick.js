@@ -15,7 +15,7 @@ module.exports = {
         //input
         if(!reason) reason = 'idk'
         if(!args[0]) return message.channel.send('bruh?? who to kick??')
-        if(!mentionedMember) return message.channel.send('how did you manage to mention someone thats NOT IN THE SERVER')
+        if(!mentionedMember) return message.channel.send('not in server 😔😔😔')
         if(!mentionedMember.kickable) return message.channel.send('cant kick?? what?')
 
         //execute
