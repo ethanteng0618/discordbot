@@ -21,7 +21,7 @@ module.exports = {
         //execute
         const kickEmbed = new Discord.MessageEmbed()
             .setTitle(`KICK`)
-            .setDescription(`<@${message.author.id}> kicked <@${mentionedMember.id}>\n\nreason:` + reason)
+            .setDescription(`<@${message.author.id}> kicked <@${mentionedMember.id}>\n\nReason: ` + reason)
             .setColor(0xFFA500) //orange
             .setTimestamp()
 
