@@ -20,15 +20,14 @@ module.exports = {
 
         //execute
         const banEmbed = new Discord.MessageEmbed()
-            .setTitle(`you got banned by ${message.author.username} smh`)
-            .setDescription(`reason for ban: ${reason}`)
-            .setColor(0x007FFF)
+            .setTitle(`BAN`)
+            .setDescription(`<@${message.author.id}> banned:\n<@${mentionedMember.id}>`)
+            .setColor(0xA90000) //orange
             .setTimestamp()
 
-        await mentionedMember.send(banEmbed).catch(err => console.log(err))
         await mentionedMember.ban({
             days: 0,
             reason: reason
-        }).catch(err => console.log(err)).then(() => message.channel.send(`${message.author} just banned <@${mentionedMember.id}>`))
+        }).catch(err => console.log(err)).then(() => message.channel.send(banEmbed))
     }
 }

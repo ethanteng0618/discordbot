@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js")
+
 module.exports = {
     name: 'unban',
     desc: 'unbans a user',
@@ -27,7 +29,12 @@ module.exports = {
                 console.log(err)
                 return message.channel.send('couldnt unban id discord bad xddd')
             }).then(() => {
-                message.channel.send(`<@${message.author.id}> unbanned <@${args[0]}>`)
+                const unbanEmbed = new MessageEmbed()
+                    .setColor(0x00ff00) //green
+                    .setTitle('UNBAN')
+                    .setDescription(`<@${message.author.id}> unbanned:\n<@${args[0]}>`)
+                    .setTimestamp()
+                message.channel.send(unbanEmbed)
             })
         })
     }
