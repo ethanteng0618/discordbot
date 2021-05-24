@@ -27,7 +27,7 @@ module.exports = {
                 console.log(err)
                 return message.channel.send('couldnt unban id discord bad xddd')
             }).then(() => {
-                message.channel.send(`<@${message.author.id}> unbanned ${args[0]}`)
+                message.channel.send(`<@${message.author.id}> unbanned <@${args[0]}>`)
             })
         })
     }
