@@ -13,22 +13,23 @@ module.exports = {
         const mentionedMember = message.mentions.members.first()
 
         //input
-        if(!reason) reason = 'idk'
+        if(!reason) reason = 'none'
         if(!args[0]) return message.channel.send('bruh?? who to kick??')
-        if(!mentionedMember) return message.channel.send('how did you manage to mention someone thats NOT IN THE SERVER')
+        if(!mentionedMember) return message.channel.send('not in server 😔😔😔')
         if(!mentionedMember.kickable) return message.channel.send('cant kick?? what?')
+        if(mentionedMember == message.author.username) return message.channel.send('cant kick yourself idiot')
 
         //execute
         const kickEmbed = new Discord.MessageEmbed()
-            .setTitle(`you got kicked by ${message.author.username} smh`)
-            .setDescription(`reason for kick: ${reason}`)
-            .setColor(0x007FFF)
+            .setTitle(`KICK`)
+            .setDescription(`<@${message.author.id}> kicked <@${mentionedMember.id}>\n\nReason: ` + reason)
+            .setColor(0xFFA500) //orange
             .setTimestamp()
 
         await mentionedMember.send(kickEmbed).catch(err => console.log(err))
         await mentionedMember.kick({
             days: 0,
             reason: reason
-        }).catch(err => console.log(err)).then(() => message.channel.send(`${message.author} just kicked <@${mentionedMember.id}>`))
+        }).catch(err => console.log(err)).then(() => message.channel.send(kickEmbed))
     }
 }
