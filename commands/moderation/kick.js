@@ -5,8 +5,8 @@ module.exports = {
     desc: 'makes kick',
     async execute(message, args) {
         //perms
-        if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('no perms stupid')
-        if(!message.guild.me.hasPermission('KICK_MEMBERS')) return message.reply('stupid owner didnt even give me, the bot, the ability to kick')
+        if(!message.member.hasPermission('KICK_MEMBERS')) return message.reply('you dont kick perms xd')
+        if(!message.guild.me.hasPermission('KICK_MEMBERS')) return message.reply('give me admin')
 
         //variables
         let reason = args.slice(1).join(' ')
@@ -14,7 +14,7 @@ module.exports = {
 
         //input
         if(!reason) reason = 'none'
-        if(!args[0]) return message.channel.send('bruh?? who to kick??')
+        if(!args[0]) return message.channel.send('who to kick??')
         if(!mentionedMember) return message.channel.send('not in server 😔😔😔')
         if(!mentionedMember.kickable) return message.channel.send('cant kick?? what?')
         if(mentionedMember == message.author.username) return message.channel.send('cant kick yourself idiot')

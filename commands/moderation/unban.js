@@ -5,8 +5,8 @@ module.exports = {
     desc: 'unbans a user',
     async execute(message, args) {
         //perms
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('no perms stupid')
-        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('stupid owner didnt even give me, the bot, the ability to ban')
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you no unban persm :pensive:')
+        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('give admin')
 
         //variables
         let reason = args.slice(1).join(' ')
@@ -15,11 +15,11 @@ module.exports = {
         //input
         if(!reason) reason = 'idk'
         if(!args[0]) return message.channel.send('bruh?? who to unban??')
-        if(isNaN(args[0])) return message.channel.send('unban with id nerd `.unban 512018848325697537 instead of .unban @Exotic`')
+        if(isNaN(args[0])) return message.channel.send('unban with id nerd `example: .unban 512018848325697537 instead of .unban @Exotic`')
 
         //execute
         message.guild.fetchBans().then(async bans => {
-            if(bans.size == 0) return message.channel.send('no one in this server is ban')
+            if(bans.size == 0) return message.channel.send('no one in this server is beaned')
 
             let bUser = bans.find(b => b.user.id == userID)
 

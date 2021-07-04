@@ -5,8 +5,8 @@ module.exports = {
     desc: 'makes ban',
     async execute(message, args) {
         //perms
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('no perms stupid')
-        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('stupid owner didnt even give me, the bot, the ability to ban')
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you dont have ban perms xdd')
+        if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('give me admin')
 
         //variables
         let reason = args.slice(1).join(' ')

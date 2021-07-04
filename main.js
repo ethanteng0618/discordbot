@@ -26,7 +26,7 @@ for (const folder of commandFolders) {
 client.once('ready', () => {
     console.log('bot on')
     //this sets the bots status
-    client.user.setActivity('russell said to set the status to "pls give me nitro"', { type: 'PLAYING' })
+    client.user.setActivity('YOU', { type: 'WATCHING' })
 })
  
 //handles commands
