@@ -3,9 +3,11 @@
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
-const settings = require('./settings.json')
-const prefix = settings.prefix
+//config
+const config = require('./config.json')
+const prefix = config.prefix
 
+//find folder lol
 const fs = require('fs')
 
 const commandFolders = fs.readdirSync('./commands');
@@ -49,4 +51,4 @@ client.on('message', message =>{
 })
 
 //bot login token
-client.login(settings.token)
+client.login(config.token)

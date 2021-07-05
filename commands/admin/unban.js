@@ -5,7 +5,7 @@ module.exports = {
     desc: 'unbans a user',
     async execute(message, args) {
         //perms
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you no unban persm :pensive:')
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you no unban perms :pensive:')
         if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('give admin')
 
         //variables

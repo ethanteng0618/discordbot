@@ -5,7 +5,7 @@ module.exports = {
     desc: 'makes ban',
     async execute(message, args) {
         //perms
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you dont have ban perms xdd')
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('you dont have ban perms xdd bruh lol lmao rofl B)')
         if(!message.guild.me.hasPermission('BAN_MEMBERS')) return message.reply('give me admin')
 
         //variables
