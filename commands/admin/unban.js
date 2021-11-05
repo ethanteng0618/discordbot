@@ -30,7 +30,7 @@ module.exports = {
                 return message.channel.send('couldnt unban id discord bad xddd')
             }).then(() => {
                 const unbanEmbed = new MessageEmbed()
-                    .setColor(0x00ff00) //green
+                    .setColor(0x00ff00) //green embed color
                     .setTitle('UNBAN')
                     .setDescription(`<@${message.author.id}> unbanned:\n<@${args[0]}>`)
                     .setTimestamp()

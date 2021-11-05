@@ -22,7 +22,7 @@ module.exports = {
         const banEmbed = new Discord.MessageEmbed()
             .setTitle(`BAN`)
             .setDescription(`<@${message.author.id}> banned:\n<@${mentionedMember.id}>`)
-            .setColor(0xA90000) //orange
+            .setColor(0xA90000) //red embed color
             .setTimestamp()
 
         await mentionedMember.ban({

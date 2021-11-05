@@ -1,11 +1,11 @@
 //docs https://discord.js.org/#/docs/main/stable/general/welcome
+//cd documents/github/discordbot
 //variables
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
 //config
-const config = require('./config.json')
-const prefix = config.prefix
+const { prefix, token } = require('./config.json')
 
 //find folder lol
 const fs = require('fs')
@@ -27,15 +27,16 @@ for (const folder of commandFolders) {
 //logs bot on in console when the bot turns on
 client.once('ready', () => {
     console.log('bot on')
-    //this sets the bots status
+    //sets the bots status
     client.user.setActivity('YOU', { type: 'WATCHING' })
 })
  
 //handles commands
 client.on('message', message =>{
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const commandName = args.shift().toLowerCase();	
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const commandName = args.shift().toLowerCase();
 
     if (!client.commands.has(commandName)) return;
 
@@ -51,4 +52,4 @@ client.on('message', message =>{
 })
 
 //bot login token
-client.login(config.token)
+client.login(token)
