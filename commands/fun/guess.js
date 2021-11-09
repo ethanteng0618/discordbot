@@ -6,8 +6,6 @@ module.exports = {
         message.reply('Picking a random number between 1 and 100');
         num = Math.floor((Math.random() * 100) + 1);
         guesses = 0;
-      
-      //finds the number 1-100
 
         if (mes[0] == '.guess') {
             if (num == 0) 
